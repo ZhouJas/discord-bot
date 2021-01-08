@@ -22,11 +22,11 @@ client.on("message", function(message) {
 
     if (command === "ping") {
         const timeTaken = Date.now() - message.createdTimestamp;
-        message.reply(`Pong ${timeTaken}ms.`);
-      }
-                                         
+        message.channel.send(`:ping_pong: ${timeTaken}ms.`);
+    }
+
 });    
 
 
 client.login(config.BOT_TOKEN);
-
+console.log("app running");
