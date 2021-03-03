@@ -30,8 +30,8 @@ client.on("message", async function (message) {
             var referencedMessageID = message.reference.messageID;
             console.log(referencedMessageID);
             var referencedMessage;
-             await chnl.messages.fetch(referencedMessageID).then(foundMessage => referencedMessage=foundMessage).catch(console.error);
-             await referencedMessage.pin({ reason: 'goose bot pin command invoked' }).then(result => {
+            await chnl.messages.fetch(referencedMessageID).then(foundMessage => referencedMessage = foundMessage).catch(console.error);
+            await referencedMessage.pin({ reason: 'goose bot pin command invoked' }).then(result => {
                 Log.success(`Pin request success for Message: ${referencedMessage.content}`);
             }).catch(console.error)
             return;
